@@ -1,7 +1,13 @@
-# Build settings
+# Build settings - Static HTML/CSS/JS only
 [build]
   publish = "."
   command = ""
+  ignore = "requirements.txt"
+
+[build.environment]
+  # Disable automatic Python detection
+  NETLIFY_SKIP_PYTHON = "true"
+  DISABLE_PYLSP = "true"
 
 # Headers for security and performance
 [[headers]]

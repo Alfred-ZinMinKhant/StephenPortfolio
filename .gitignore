@@ -1,4 +1,13 @@
-# Python
+# Virtual Environment (for local Python development only)
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python (for local development only - not needed for deployment)
 __pycache__/
 *.py[cod]
 *$py.class
@@ -21,15 +30,6 @@ share/python-wheels/
 .installed.cfg
 *.egg
 PIPFILE.lock
-
-# Virtual Environment
-.env
-.venv/
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
 
 # PyCharm
 .idea/

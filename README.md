@@ -39,13 +39,15 @@ Stephen Portfolio/
 ├── index.html              # Main portfolio page
 ├── styles.css              # Custom CSS styles
 ├── script.js               # JavaScript functionality
-├── extract_pdf.py          # PDF content extraction script
-├── pdf_content.json        # Extracted portfolio data
 ├── netlify.toml            # Netlify deployment config
+├── _headers                # Security headers
 ├── package.json            # Project metadata
-├── requirements.txt        # Python dependencies
 ├── .gitignore             # Git ignore rules
-└── README.md              # Project documentation
+├── README.md              # Project documentation
+├── LICENSE                # MIT license
+└── docs/                  # Development tools
+    ├── extract_pdf.py     # PDF content extraction script
+    └── requirements.txt   # Python dependencies (dev only)
 ```
 
 ## 🎨 **Campaigns Featured**
