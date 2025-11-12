@@ -1,0 +1,36 @@
+{
+  "name": "steven-min-portfolio",
+  "version": "1.0.0",
+  "description": "A modern, responsive social media portfolio website for Steven Min",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -c-1",
+    "dev": "npx http-server -p 3000 -c-1",
+    "build": "echo 'Static site - no build process required'",
+    "test": "echo 'No tests specified'",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": [
+    "portfolio",
+    "social-media",
+    "web-design",
+    "responsive",
+    "netlify",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Steven Min",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "your-repo-url-here"
+  },
+  "homepage": "your-netlify-url-here",
+  "bugs": {
+    "url": "your-repo-url-here/issues"
+  }
+}
