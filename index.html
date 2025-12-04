@@ -224,7 +224,6 @@
                 </div>
             </div>
         </div>
-        </div>
     </section>
 
     <!-- Portfolio Section -->
@@ -249,25 +248,28 @@
                 <div class="portfolio-item campaign-card" data-category="starfish">
 
                     <div class="portfolio-content">
-                        <div style="height:18px;"></div>
-                        <div style="display:flex; justify-content:cen ter; align-items:center; margin-bottom:0.5rem;">
+                        <div style="display:flex; align-items:flex-start; gap:1.2rem; margin-bottom:0.7rem;">
+                            <div style="flex:1; display:flex; flex-direction:column; justify-content:flex-start;">
+                                <h3
+                                    style="margin:0 0 0.5rem 0; font-size:1.35rem; font-weight:700; color:var(--accent-color); line-height:1.1;">
+                                    "Achieve with Starfish"</h3>
+                                <p class="campaign-client"
+                                    style="font-weight:500; color:var(--text-color); margin-bottom:0.2rem;">Starfish
+                                    Academy English Language Learning App</p>
+                                <p class="campaign-type"
+                                    style="font-size:0.98rem; color:var(--text-light); margin-bottom:0.7rem;">Type:
+                                    Organic + Ads (Brand Awareness & Engagement)</p>
+                            </div>
                             <img src="assets/images/StarfishLogo.png" alt="Starfish Logo"
-                                style="width:140px; height:140px; margin-right:0.5rem; opacity:1; object-fit:contain; background:#fff; border-radius:18px; box-shadow:0 4px 18px rgba(52,69,81,0.15); border:3px solid #e8e9eb;">
+                                style="width:140px; height:140px; opacity:1; object-fit:contain; background:#fff; border-radius:18px; box-shadow:0 4px 18px rgba(52,69,81,0.15); border:3px solid #e8e9eb;">
                         </div>
-                        <h3
-                            style="margin-bottom:0.5rem; font-size:1.25rem; font-weight:600; color:var(--accent-color);">
-                            "Achieve with Starfish"</h3>
-                        <p class="campaign-client" style="font-weight:500; color:var(--text-color);">Starfish Academy
-                            English Language Learning App</p>
-                        <p class="campaign-type"
-                            style="font-size:0.98rem; color:var(--text-light); margin-bottom:0.7rem;">Type: Organic +
-                            Ads (Brand Awareness & Engagement)</p>
+                        <br>
                         <h3>Objective:</h3>
                         <p style="margin-bottom:0.7rem;">8 Facebook static posts aimed at parents of kids aged 6–12,
                             promoting awareness and engagement for the English language learning app.</p>
 
 
-
+                        <br>
                         <div class="campaign-details">
                             <h4>My Role:</h4>
                             <ul>
@@ -282,20 +284,37 @@
                         </div>
                         <br>
 
-                        <div class="highlight-post">
-                            <h4>Highlighted Post Performance:</h4>
-                            <p>1,293 views, exceeding benchmark by 39% with 100% organic reach. Strong performance
-                                driven by addressing parents' key pain points with emotionally connecting visuals.
-                            </p>
+
+                        <div class="highlight-execution" style="margin-top:1rem;">
+                            <h4 style="font-size:1.08rem; margin-bottom:0.4rem; color:var(--accent-color);">
+                                Execution</h4>
+                            <ul style="list-style:none; padding-left:0; font-size:0.98rem;">
+                                <li><strong>Number of Posts:</strong> 12</li>
+                                <li><strong>Platform:</strong> Facebook</li>
+                                <li><strong>Content:</strong> Static Posts</li>
+                            </ul>
                         </div>
 
+
                         <div class="portfolio-tags">
-                            <span class="tag">Highlighted Post</span>
-                            <span class="tag">Key Achievements</span>
-                            <span class="tag">Key Metrics</span>
+                            <button class="tag tag-btn active" data-modal="highlighted">Highlighted Post</button>
+                            <button class="tag tag-btn" data-modal="achievements">Key Achievements</button>
+                            <button class="tag tag-btn" data-modal="metrics">Key Metrics</button>
+                        </div>
+                        <!-- Modal Popup for Portfolio Tags -->
+                        <div id="portfolio-modal" class="portfolio-modal" style="display:none;">
+                            <div class="modal-content">
+                                <div id="modal-slideshow" class="modal-slideshow">
+                                    <!-- Images will be injected here -->
+                                </div>
+                                <div id="modal-description" class="modal-description" style="margin-top:1.2rem;">
+                                    <!-- Content will be injected here -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- Dream Jelly Campaign -->
                 <div class="portfolio-item campaign-card" data-category="dreamjelly">
@@ -319,7 +338,8 @@
                         <p class="campaign-client" style="font-weight:500; color:var(--text-color);">Dream Jelly (Local
                             Jelly Brand)</p>
                         <p class="campaign-type"
-                            style="font-size:0.98rem; color:var(--text-light); margin-bottom:0.7rem;">Type: Organic
+                            style="font-size:0.98rem; color:var(--text-light); margin-bottom:0.7rem;">
+                            Type: Organic
                             (Brand Awareness & Engagement)</p>
                         <p style="margin-bottom:0.7rem;">Using relatable and nostalgic storytelling to emotionally
                             connect with both young and adult consumers, showcasing Dream Jelly as a timeless favorite.
@@ -370,28 +390,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-
-    <section id="campaign-presentation" class="campaign-presentation"
-        style="padding: 60px 0; background: var(--section-bg, #f7f7f7);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Campaign Presentation</h2>
-                <p class="section-subtitle">Explore a visual overview of my campaign work</p>
-            </div>
-            <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-                <iframe loading="lazy"
-                    style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                    src="https://www.canva.com/design/DAG6MIqHBK0/-xqsxARjZxzyXwnthu_COA/view?embed"
-                    allowfullscreen="allowfullscreen" allow="fullscreen">
-                </iframe>
-            </div>
-            <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAG6MIqHBK0&#x2F;-xqsxARjZxzyXwnthu_COA&#x2F;view?utm_content=DAG6MIqHBK0&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
-                target="_blank" rel="noopener">Campaigns</a> by Steven Min
         </div>
     </section>
 
@@ -572,27 +570,58 @@
         </div>
     </footer>
 
-    <script>
-        // Fallback for blocked iframe
-        window.addEventListener('DOMContentLoaded', function () {
-            var iframe = document.getElementById('canva-embed');
-            var fallback = document.getElementById('canva-fallback');
-            var timer = setTimeout(function () {
-                // If iframe is blocked, show fallback
-                if (iframe && fallback && iframe.contentWindow === null) {
-                    fallback.style.display = 'block';
-                    iframe.style.display = 'none';
-                }
-            }, 1200);
-            // Also handle iframe error
-            iframe.onerror = function () {
-                fallback.style.display = 'block';
-                iframe.style.display = 'none';
-            };
-        });
-    </script>
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // Portfolio Tag Modal Logic
+        const modal = document.getElementById('portfolio-modal');
+        const slideshow = document.getElementById('modal-slideshow');
+        const description = document.getElementById('modal-description');
+        const tagButtons = document.querySelectorAll('.tag-btn');
+
+        // Example data for each button
+        const modalData = {
+            highlighted: {
+                images: ['assets/images/Campaigns.png'],
+                content: `<h3>Highlighted Post</h3><p>1,293 views, exceeding benchmark by 39% with 100% organic reach. Strong performance driven by addressing parents' key pain points with emotionally connecting visuals.</p>`
+            },
+            achievements: {
+                images: ['assets/images/StarfishLogo.png'],
+                content: `<h3>Key Achievements</h3><ul><li>+53% Reach Increase</li><li>100% Client Satisfaction</li><li>Major Campaigns Delivered</li></ul>`
+            },
+            metrics: {
+                images: ['assets/images/Campaigns (1).png'],
+                content: `<h3>Key Metrics</h3><ul><li>Total Reach: 6,878</li><li>Total Engagement: 158</li><li>Campaign Posts: 8</li></ul>`
+            }
+        };
+
+        function showModal(key) {
+            if (modalData[key]) {
+                slideshow.innerHTML = modalData[key].images.map(img => `<img src="${img}" style="max-width:100%;border-radius:12px;box-shadow:0 2px 12px rgba(52,69,81,0.10);margin-bottom:1rem;" />`).join('');
+                description.innerHTML = modalData[key].content;
+                modal.style.display = 'block';
+                tagButtons.forEach(btn => btn.classList.remove('active'));
+                document.querySelector(`.tag-btn[data-modal="${key}"]`).classList.add('active');
+            }
+        }
+        tagButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const key = btn.getAttribute('data-modal');
+                showModal(key);
+            });
+        });
+        // Show first modal by default
+        document.addEventListener('DOMContentLoaded', function () {
+            showModal('highlighted');
+        });
+        // Remove close button logic
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                tagButtons.forEach(btn => btn.classList.remove('active'));
+            }
+        };
+    </script>
 </body>
 
 </html>
