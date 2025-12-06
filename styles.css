@@ -1,15 +1,17 @@
 /* Reset and Base Styles */
 :root {
-    --primary-color: #D3D3D3; /* Light Gray */
+    --primary-color: #FFF; /* Light Gray */
     --secondary-color: #708090; /* Slate Gray */
     --accent-color: #708090; /* Slate Gray for accents */
     --text-color: #36454F; /* Charcoal for high contrast text */
     --text-light: #A9A9A9; /* Dark Gray for lighter text */
-    --bg-color: #D3D3D3; /* Light Gray background */
-    --section-bg: #708090; /* Slate Gray for sections */
+    --bg-color: #FFF; /* Light Gray background */
+    --section-bg: #000; /* Slate Gray for sections */
     --card-bg: #E8E9EB; /* Bright Gray for cards */
     --border-color: #708090; /* Slate Gray for borders */
     --text-slate:#2b2d42;
+    --text-white: #FAFDF3;
+    --nav-hover: #EAE3C9;
 }
 
 * {
@@ -55,11 +57,12 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-align: center;
+    color: var(--text-white);
 }
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: var(--text-slate);
+    color: var(--text-white);
     text-align: center;
     margin-bottom: 3rem;
     max-width: 600px;
@@ -86,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-color) 0%, #38b2ac 100%);
+    background: linear-gradient(135deg, var(--accent-color) 0%, #000000 100%);
     color: var(--bg-color);
 }
 
@@ -117,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #D3D3D3 0%, #708090 100%);
+    background: linear-gradient(135deg, #767676 0%, #000000 100%);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -135,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-logo h2 {
-    color: var(--accent-color);
+    color: var(--text-white);
     font-size: 1.5rem;
 }
 
@@ -147,14 +150,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--text-white);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
 }
 
 .nav-link:hover {
-    color: var(--accent-color);
+    color: var(--nav-hover);
 }
 
 .nav-link::after {
@@ -207,18 +210,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     line-height: 1.2;
     color: var(--text-color);
 }
 
 .hero-subtitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
     font-weight: 400;
     color: var(--text-slate);
 }
+
 
 .hero-description {
     font-size: 1.2rem;
@@ -302,14 +306,14 @@ h1, h2, h3, h4, h5, h6 {
 .about-text h3 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: var(--text-color);
+    color: var(--text-white);
     position: relative;
     z-index: 2;
 }
 
 .about-text p {
     font-size: 1.1rem;
-    color: var(--text-slate);
+    color: var(--text-white);
     margin-bottom: 1.5rem;
     line-height: 1.7;
 }
@@ -321,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
 .experience h4 {
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
-    color: var(--text-color);
+    color: var(--text-white);
 }
 
 /* Animation Classes */
@@ -339,10 +343,10 @@ h1, h2, h3, h4, h5, h6 {
 .experience-item {
     margin-bottom: 2.5rem;
     padding: 2.2rem 2rem 2rem 2rem;
-    background: linear-gradient(135deg, #E8E9EB 60%, #D3D3D3 100%);
+    background: linear-gradient(135deg, #E8E9EB 60%, #ffffff 100%);
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(52, 69, 79, 0.08);
-    border-left: 6px solid var(--accent-color);
+    border-left: 6px solid var(--text-light);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -352,7 +356,7 @@ h1, h2, h3, h4, h5, h6 {
 .experience-item h5 {
     font-size: 1.35rem;
     margin-bottom: 0.3rem;
-    color: var(--text-color);
+    color: var(--section-bg);
     display: flex;
     align-items: center;
     gap: 0.7rem;
@@ -360,7 +364,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .experience-item .company {
     font-weight: 600;
-    color: var(--accent-color);
+    color: var(--text-slate);
     margin-bottom: 0.5rem;
     font-size: 1.05rem;
 }
@@ -372,7 +376,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0.5rem;
     padding-left: 1.2rem;
     font-size: 1rem;
-    color: var(--text-color);
     line-height: 1.7;
 }
 
@@ -383,7 +386,7 @@ h1, h2, h3, h4, h5, h6 {
 .skills h4 {
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
-    color: var(--text-color);
+    color: var(--text-white);
 }
 
 .skills-grid {
@@ -400,7 +403,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     gap: 1.2rem;
     margin-bottom: 3rem;
-    background: linear-gradient(135deg, #E8E9EB 60%, #D3D3D3 100%);
+    background: linear-gradient(135deg, #E8E9EB 60%, #ffffff 100%);
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(52, 69, 79, 0.08);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -412,18 +415,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .skill-item:hover {
     transform: translateY(-6px) scale(1.04);
-    border-color: var(--accent-color);
+    border-color: var(--text-slate);
     box-shadow: 0 8px 32px rgba(52, 69, 79, 0.16);
 }
 
 .skill-item i {
-    color: var(--accent-color);
+    color: var(--text-slate);
     font-size: 2.4rem;
     margin-bottom: 0.5rem;
 }
 
 .skill-item span {
-    color: var(--text-color);
+    color: var(--text-slate);
     font-weight: 600;
     font-size: 1.1rem;
     text-align: center;
@@ -434,7 +437,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--text-slate);
 }
 
 .about-stats {
@@ -447,7 +450,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     padding: 2rem;
     background: linear-gradient(135deg, #D3D3D3 0%, #708090 100%);
-    color: #36454F;
+    color: var(--text-slate);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
 }
@@ -642,7 +645,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Services Section */
 .services {
     padding: 100px 20px;
-    background: var(--bg-color);
+    background: var(--section-bg);
 }
 
 .services-grid {
@@ -653,7 +656,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card {
     padding: 3rem 2rem;
-    background: var(--card-bg);
+    background: linear-gradient(135deg, #E8E9EB 60%, #ffffff 100%);
     border-radius: 15px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -669,7 +672,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--accent-color) 0%, #D3D3D3 100%);
+    background: linear-gradient(135deg, #767676 0%, #000000 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -682,7 +685,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--text-slate);
 }
 
 .service-card p {
@@ -707,14 +710,14 @@ h1, h2, h3, h4, h5, h6 {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--accent-color);
+    color: var(--text-slate);
     font-weight: bold;
 }
 
 /* Contact Section */
 .contact {
     padding: 100px 20px;
-    background: var(--section-bg);
+    background: var(--bg-color);
 }
 
 .contact-content {
@@ -722,12 +725,16 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
+    color: var(--text-slate);
+}
+.contact .section-title, .section-subtitle{
+    color: var(--text-slate);
 }
 
 .contact-info h3 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: var(--text-color);
+    color: var(--text-slate);
 }
 
 .contact-info > p {
@@ -747,7 +754,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-item i {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--accent-color) 0%, #38b2ac 100%);
+    background: linear-gradient(135deg, #767676 0%, #000000 100%);
     color: var(--bg-color);
     border-radius: 50%;
     display: flex;
@@ -759,7 +766,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-item h4 {
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
-    color: var(--text-color);
+    color: var(--text-slate);
 }
 
 .contact-item p {
@@ -774,7 +781,7 @@ h1, h2, h3, h4, h5, h6 {
 .social-links h4 {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--text-slate);
 }
 
 .social-icons {
@@ -803,7 +810,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-form {
-    background: var(--card-bg);
+    background: var(--bg-color);
     padding: 3rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -839,8 +846,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 .footer {
-    background: var(--primary-color);
-    color: var(--text-color);
+    background: var(--section-bg);
+    color: var(--text-white);
     padding: 2rem 20px;
 }
 
@@ -858,13 +865,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-links a {
-    color: var(--text-slate);
+    color: var(--text-white);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: var(--accent-color);
+    color: var(--nav-hover);
 }
 
 /* Responsive Design */

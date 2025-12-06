@@ -27,17 +27,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background change on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(26, 32, 44, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-        navbar.style.background = 'rgba(26, 32, 44, 0.95)';
-        navbar.style.boxShadow = 'none';
-    }
-});
+// // Navbar background change on scroll
+// window.addEventListener('scroll', () => {
+//     const navbar = document.querySelector('.navbar');
+//     if (window.scrollY > 100) {
+//         navbar.style.background = 'rgba(26, 32, 44, 0.98)';
+//         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+//     } else {
+//         navbar.style.background = 'rgba(26, 32, 44, 0.95)';
+//         navbar.style.boxShadow = 'none';
+//     }
+// });
 
 // Portfolio Filter Functionality
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -500,12 +500,12 @@ window.addEventListener('scroll', () => {
 const navStyles = document.createElement('style');
 navStyles.textContent = `
     .nav-link.active {
-        color: #4fd1c7 !important;
+        color: #EAE3C9 !important;
     }
     
     .nav-link.active::after {
         width: 100% !important;
-        background: #4fd1c7 !important;
+        background: #EAE3C9 !important;
     }
 `;
 document.head.appendChild(navStyles);
