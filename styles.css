@@ -727,7 +727,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: start;
     color: var(--text-slate);
 }
-.contact .section-title, .section-subtitle{
+.contact .section-title, .contact .section-subtitle{
     color: var(--text-slate);
 }
 
