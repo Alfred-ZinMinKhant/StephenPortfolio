@@ -471,6 +471,10 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--bg-color);
 }
 
+.portfolio .section-title, .portfolio .section-subtitle{
+    color: var(--text-slate);
+}
+
 .portfolio-filter {
     display: flex;
     justify-content: center;
@@ -483,7 +487,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px 20px;
     border: 2px solid var(--accent-color);
     background: transparent;
-    color: var(--accent-color);
+    color: var(--section-bg);
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -492,8 +496,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .filter-btn.active,
 .filter-btn:hover {
-    background: var(--accent-color);
-    color: var(--text-color);
+    background: var(--section-bg);
+    color: var(--text-white);
 }
 
 .portfolio-grid {
@@ -535,7 +539,7 @@ h1, h2, h3, h4, h5, h6 {
 .portfolio-content h3 {
     font-size: 1.45rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--text-slate);
     font-weight: 600;
 }
 
@@ -587,7 +591,7 @@ h1, h2, h3, h4, h5, h6 {
 .metric-value {
         font-size: 2.3rem;
         font-weight: bold;
-        color: #2b5d7a;
+    color: var(--text-slate);
         display: block;
         letter-spacing: 0.5px;
         animation: popMetric 0.8s cubic-bezier(.4,1.4,.6,1) both;
@@ -602,7 +606,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .metric-label {
     font-size: 0.78rem;
-    color: #4e6e8e;
+    color: var(--text-slate);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 500;
@@ -623,7 +627,7 @@ h1, h2, h3, h4, h5, h6 {
 .tag {
     padding: 0.38rem 1.2rem;
     background: linear-gradient(90deg, #e8e9eb 60%, #b6d0e2 100%);
-    color: #2b5d7a;
+    color: var(--text-slate);
     border-radius: 14px;
     font-size: 0.98rem;
     font-weight: 500;
