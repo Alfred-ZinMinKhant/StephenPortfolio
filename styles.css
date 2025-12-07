@@ -502,7 +502,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -656,7 +656,21 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-}
+        grid-template-columns: repeat(2, minmax(340px, 1fr));
+        /* removed justify-content to allow full width */
+    }
+
+    @media (max-width: 900px) {
+        .portfolio-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Center the last card if odd number of cards */
+    .portfolio-grid > .portfolio-item:nth-child(3):last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
 
 .service-card {
     padding: 3rem 2rem;

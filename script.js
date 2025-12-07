@@ -27,17 +27,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// // Navbar background change on scroll
-// window.addEventListener('scroll', () => {
-//     const navbar = document.querySelector('.navbar');
-//     if (window.scrollY > 100) {
-//         navbar.style.background = 'rgba(26, 32, 44, 0.98)';
-//         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-//     } else {
-//         navbar.style.background = 'rgba(26, 32, 44, 0.95)';
-//         navbar.style.boxShadow = 'none';
-//     }
-// });
+// Navbar background change on scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(26, 32, 44, 0.98)';
+        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+    } else {
+        navbar.style.background = 'rgba(26, 32, 44, 0.95)';
+        navbar.style.boxShadow = 'none';
+    }
+});
 
 // Portfolio Filter Functionality
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -500,12 +500,294 @@ window.addEventListener('scroll', () => {
 const navStyles = document.createElement('style');
 navStyles.textContent = `
     .nav-link.active {
-        color: #EAE3C9 !important;
+        color: #4fd1c7 !important;
     }
     
     .nav-link.active::after {
         width: 100% !important;
-        background: #EAE3C9 !important;
+        background: #4fd1c7 !important;
     }
 `;
 document.head.appendChild(navStyles);
+
+// =====================
+// Portfolio Modal Logic (Multi-card)
+// =====================
+
+// Example modal data for each campaign (replace with real data as needed)
+const campaignModalData = {
+    starfish: {
+        highlighted: {
+            slides: [
+                {
+                    image: 'assets/images/Campaigns.png',
+                    content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 8,522 total views; at campaign end (Jan 31st) the post had 8,087 views, exceeding the benchmark upper bound of 3,169 views.</p><p>Achieved 100% organic reach and engagement with no ad spend.</p> <p> This post performed strongly because it spoke directly to students’ goals of studying abroad and pursuing global career opportunities, and the clear visual design, easy-to-read messaging, and the encouraging tagline ‘Start small and dream big’ helped viewers understand that even with only basic English skills, what matters most is taking the first step toward a bigger future.</p>`
+                },
+                {
+                    image: 'assets/images/StarfishLogo.png',
+                    content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 19,221 total views; at campaign end (Jan 31st) the post had 7,476 views, exceeding the benchmark upper bound of 2,664 views.</p> <p>The post performed well because the content showed that the institute is not only a place to study English but also a fun and engaging learning environment, and the carousel format highlighted each activity such as in-person games, talent shows, and school events, which captured viewers’ interest and encouraged higher engagement.</p>`
+                },
+                {
+                    image: 'assets/images/StarfishLogo.png',
+                    content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 6,770 total views; at campaign end period the post had 6,450 views, exceeding the benchmark upper bound of 3,207 views.</p> <p>Achieved 100% organic reach and engagement with no ad spend.</p> <p>The post performed well because it used the trending Chill Guy meme from TikTok, which was very popular among young people at that time, and this helped deliver a fun message that with Starfish classes you can be relaxed and confident about learning English, unlike others who are still struggling.</p>`
+                },
+                {
+                    image: 'assets/images/StarfishLogo.png',
+                    content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 6,020 total views; at campaign end period the post had 5,729 views, exceeding the benchmark upper bound of 3,207 views.</p> <p>Achieved 100% organic reach and engagement with no ad spend.</p> <p>The post performed well because it focused on a major pain point for university students in Myanmar, which is the lack of time to join English classes due to their full day of lectures, and this insight came from detailed research and surveys done before the campaign. The content delivered a clear message that Starfish offers flexible evening schedules, allowing students to study at a time that fits their routine and supports their future career growth.</p>`
+                },
+                {
+                    image: 'assets/images/StarfishLogo.png',
+                    content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 5,679 total views; at campaign end (Jan 31st) the post had 3,423 views, exceeding the benchmark upper bound of 2,045 views.</p> <p>Achieved 100% organic reach and engagement with no ad spend.</p> <p>The post performed well because the announcement of a free trial Zoom class gave potential customers a sense of credibility and assurance, helping move them from consideration to conversion by showing the real quality of the teaching experience. It also performed strongly because free trials lower the barrier for first-time learners, create curiosity, and encourage people to test the class without commitment, which naturally drives higher engagement and sign-ups.</p>`
+                }
+            ]
+        },
+        achievements: {
+            slides: [
+                {
+                    content: `
+                        <h3>Key Achievements</h3>
+                        <table style="width:100%;margin-top:1rem;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(52,69,81,0.10);">
+                            <thead style="background:var(--accent-color,#3451a1);color:#fff;">
+                                <tr>
+                                    <th style="padding:8px 10px;text-align:left;">Metric</th>
+                                    <th style="padding:8px 10px;text-align:left;">Campaign Posts</th>
+                                    <th style="padding:8px 10px;text-align:left;">Previous Month</th>
+                                    <th style="padding:8px 10px;text-align:left;">%Change</th>
+                                </tr>
+                            </thead>
+                            <tbody style="color:var(--text-slate);">
+                                <tr>
+                                    <td style="padding:8px 10px;">Total Reach</td>
+                                    <td style="padding:8px 10px;">42,126</td>
+                                    <td style="padding:8px 10px;">27,071</td>
+                                    <td style="padding:8px 10px;">+55.61%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 10px;">Total Engagement</td>
+                                    <td style="padding:8px 10px;">401</td>
+                                    <td style="padding:8px 10px;">257</td>
+                                    <td style="padding:8px 10px;">+56.03%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 10px;">Total Views</td>
+                                    <td style="padding:8px 10px;">79,834</td>
+                                    <td style="padding:8px 10px;">59,731</td>
+                                    <td style="padding:8px 10px;">+33.66%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    `
+                }
+            ]
+        },
+        metrics: {
+            slides: [
+                {
+                    image: 'assets/images/starfish_table.png',
+                    content: `<h3>Brand Impact</h3><p>These lifetime metrics from Meta show the posts I managed for the 'Grow Forward With Starfish Education' campaign, which ran for the whole month of January 2025, with 12 posts. Other in-house posts made during this period are not included here.</p>`
+                },
+                {
+                    image: 'assets/images/StarFish_chart.png',
+                    content: `<h3>Brand Impact</h3><p>These lifetime metrics from Meta show the posts I managed for the 'Grow Forward With Starfish Education' campaign, which ran for the whole month of January 2025, with 12 posts. Other in-house posts made during this period are not included here.</p>`
+                },
+                {
+                    image: 'assets/images/StarFish_chart1.png',
+                    content: `<h3>Brand Impact</h3><p>These lifetime metrics from Meta show the posts I managed for the 'Grow Forward With Starfish Education' campaign, which ran for the whole month of January 2025, with 12 posts. Other in-house posts made during this period are not included here.</p>`
+                }
+            ]
+        }
+    },
+    dreamjelly: {
+        highlighted: {
+            slides: [
+                {
+                    image: 'assets/images/dreamjelly1.jpg',
+                    content: `<h3>Dream Jelly Highlighted Post</h3><p>Example content for Dream Jelly campaign highlighted post.</p>`
+                },
+                {
+                    image: 'assets/images/dreamjelly2.jpg',
+                    content: `<h3>Dream Jelly Highlighted Post 2</h3><p>More example content for Dream Jelly.</p>`
+                },
+                {
+                    image: 'assets/images/dreamjelly3.jpg',
+                    content: `<h3>Dream Jelly Highlighted Post 3</h3><p>Even more example content for Dream Jelly.</p>`
+                }
+            ]
+        },
+        achievements: {
+            slides: [
+                {
+                    content: `<h3>Dream Jelly Achievements</h3><table style='width:100%'><tr><th>Metric</th><th>Value</th></tr><tr><td>Reach</td><td>10,000</td></tr></table>`
+                }
+            ]
+        },
+        metrics: {
+            slides: [
+                {
+                    image: 'assets/images/dreamjelly_metrics.png',
+                    content: `<h3>Dream Jelly Metrics</h3><p>Metrics for Dream Jelly campaign.</p>`
+                }
+            ]
+        }
+    },
+    placeholder: {
+        highlighted: {
+            slides: [
+                {
+                    image: 'assets/images/placeholder1.jpg',
+                    content: `<h3>Placeholder Highlighted Post</h3><p>This is a placeholder highlighted post.</p>`
+                },
+                {
+                    image: 'assets/images/placeholder2.jpg',
+                    content: `<h3>Placeholder Highlighted Post 2</h3><p>Another placeholder post.</p>`
+                },
+                {
+                    image: 'assets/images/placeholder3.jpg',
+                    content: `<h3>Placeholder Highlighted Post 3</h3><p>Yet another placeholder post.</p>`
+                }
+            ]
+        },
+        achievements: {
+            slides: [
+                {
+                    content: `<h3>Placeholder Achievements</h3><table style='width:100%'><tr><th>Metric</th><th>Value</th></tr><tr><td>Sample</td><td>100</td></tr></table>`
+                }
+            ]
+        },
+        metrics: {
+            slides: [
+                {
+                    image: 'assets/images/placeholder_metrics.png',
+                    content: `<h3>Placeholder Metrics</h3><p>Metrics for placeholder campaign.</p>`
+                }
+            ]
+        }
+    }
+};
+
+function setupModalHandlers(campaign) {
+    const modalId = `portfolio-modal-${campaign}`;
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+
+    // Tag buttons for this card
+    const tagButtons = document.querySelectorAll(`.portfolio-item[data-category='${campaign}'] .tag-btn`);
+    tagButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            tagButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const modalKey = btn.getAttribute('data-modal');
+            showModalContent(campaign, modalKey.replace(`${campaign}-`, ''), modal);
+            // Show modal when any tag is clicked
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close modal on outside click
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Slideshow navigation
+    const prevBtn = modal.querySelector(`#prev-slide-${campaign}`);
+    const nextBtn = modal.querySelector(`#next-slide-${campaign}`);
+    let currentSlide = 0;
+    let currentTag = 'highlighted';
+
+    function showSlide(idx) {
+        const data = campaignModalData[campaign][currentTag];
+        if (!data || !data.images) return;
+        const imagesDiv = modal.querySelector(`#slideshow-images-${campaign}`);
+        const radiosDiv = modal.querySelector(`#slideshow-radios-${campaign}`);
+        imagesDiv.innerHTML = '';
+        radiosDiv.innerHTML = '';
+        if (data.images && data.images.length) {
+            const img = document.createElement('img');
+            img.src = data.images[idx];
+            img.alt = `${campaign} slide ${idx + 1}`;
+            img.className = 'modal-slide-img';
+            img.style.cursor = 'zoom-in';
+            // Lightbox effect
+            img.addEventListener('click', () => {
+                const overlay = document.createElement('div');
+                overlay.className = 'lightbox-overlay';
+                overlay.innerHTML = `<img src='${data.images[idx]}' class='lightbox-img' style='max-width:90vw;max-height:90vh;display:block;margin:auto;'/>`;
+                overlay.style.position = 'fixed';
+                overlay.style.top = 0;
+                overlay.style.left = 0;
+                overlay.style.width = '100vw';
+                overlay.style.height = '100vh';
+                overlay.style.background = 'rgba(0,0,0,0.85)';
+                overlay.style.zIndex = 99999;
+                overlay.addEventListener('click', () => overlay.remove());
+                document.body.appendChild(overlay);
+            });
+            imagesDiv.appendChild(img);
+            // Radios
+            for (let i = 0; i < data.images.length; i++) {
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = `slideshow-radio-${campaign}`;
+                radio.className = 'slideshow-radio';
+                radio.checked = i === idx;
+                radio.addEventListener('click', () => {
+                    currentSlide = i;
+                    showSlide(currentSlide);
+                });
+                radiosDiv.appendChild(radio);
+            }
+        }
+    }
+
+    function showModalContent(campaign, tag, modal) {
+        currentTag = tag;
+        currentSlide = 0;
+        const descDiv = modal.querySelector(`#modal-description-${campaign}`);
+        const slideshowDiv = modal.querySelector(`#modal-slideshow-${campaign}`);
+        if (campaignModalData[campaign][tag].images) {
+            slideshowDiv.style.display = '';
+            showSlide(currentSlide);
+            descDiv.innerHTML = campaignModalData[campaign][tag].description || '';
+        } else if (campaignModalData[campaign][tag].table) {
+            slideshowDiv.style.display = 'none';
+            descDiv.innerHTML = campaignModalData[campaign][tag].table;
+        }
+    }
+
+
+    // Initial content (default to highlighted)
+    showModalContent(campaign, 'highlighted', modal);
+
+    // Make Highlighted Posts active and open modal by default
+    const highlightedBtn = document.querySelector(`.portfolio-item[data-category='${campaign}'] .tag-btn[data-modal='${campaign}-highlighted']`);
+    if (highlightedBtn) {
+        highlightedBtn.classList.add('active');
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Slideshow navigation
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const data = campaignModalData[campaign][currentTag];
+            if (!data || !data.images) return;
+            currentSlide = (currentSlide - 1 + data.images.length) % data.images.length;
+            showSlide(currentSlide);
+        });
+        nextBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const data = campaignModalData[campaign][currentTag];
+            if (!data || !data.images) return;
+            currentSlide = (currentSlide + 1) % data.images.length;
+            showSlide(currentSlide);
+        });
+    }
+}
+
+Object.keys(campaignModalData).forEach(setupModalHandlers);
