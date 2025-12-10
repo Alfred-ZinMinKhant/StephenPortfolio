@@ -53,7 +53,7 @@ const modalData = {
         highlighted: {
             slides: [
                 {
-                    image: 'assets/images/H1_Data (2).png',
+                    image: 'assets/images/H4_Data (1).png',
                     content: `<h3>Highlighted Post</h3><p>The post performed well because it was a giveaway announcement released during the Thadingyut festive period, when audiences are naturally more active and open to participating in lighthearted content.  With a well planned boost of 30 dollars for two weeks, the post reached a wide audience and encouraged strong engagement.
 </p>
 <p> Its lifetime performance on Meta shows how effective it was, achieving more than 450 thousand views, 964 interactions, 327 link clicks, and 116 new follows, proving that the festive timing, the giveaway incentive, and the paid reach together created strong results for the campaign.</p>`
@@ -72,13 +72,13 @@ const modalData = {
 </p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because it used a creative and playful engagement approach with a visual design that carried a clear message. The hook tagline ‘How much is your phone battery now?’ combined with four different battery levels and matching product options encouraged viewers to check their own phones and compare their battery range with the products shown. This simple and interactive moment made the content fun, relatable, and highly shareable, which helped boost engagement</p>`
                 },
                 {
-                    image: 'assets/images/H4_Data (1).png',
+                    image: 'assets/images/H1_Data (2).png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 1,068 total views; at campaign end (Oct 31st) the post had 969 views, exceeding the benchmark upper bound of 453 views.
 </p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because its visual design was eye catching, clean, and easy to understand, and the bright brand colors made the content pop. The clear showcase of the three different flavored products added a fun and appealing look that attracted viewers’ attention and encouraged more engagement.
 </p>`
                 },
                 {
-                    image: 'assets/images/H4_Data (1).png',
+                    image: 'assets/images/H5_Data (1).png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 927 total views; at campaign end (Oct 31st) the post had 839 views, exceeding the benchmark upper bound of 522 views.
 </p><p>Achieved 100% organic reach and engagement with no ad spend.
 </p><p>The post performed well because its main goal was to highlight a specific product’s soft texture and unique features. The message was delivered effectively with a catchy tagline ‘Cannot escape from softness’ and a visual design that was both clean and creative, clearly showcasing the product’s cushion on the blocks of jellies inside the package, making the softness and the packaging immediately understandable and appealing to viewers.</p>`
