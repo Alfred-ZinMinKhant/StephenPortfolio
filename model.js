@@ -4,23 +4,23 @@ const modalData = {
         highlighted: {
             slides: [
                 {
-                    image: 'assets/images/H1_Data (1).png',
+                    image: 'assets/images/1H_.png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 8,522 total views; at campaign end (Jan 31st) the post had 8,087 views, exceeding the benchmark upper bound of 3,169 views.</p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>This post performed strongly because it spoke directly to students’ goals of studying abroad and pursuing global career opportunities, and the clear visual design, easy-to-read messaging, and the encouraging tagline ‘Start small and dream big’ helped viewers understand that even with only basic English skills, what matters most is taking the first step toward a bigger future.</p>`
                 },
                 {
-                    image: 'assets/images/H2_Data (1).png',
+                    image: 'assets/images/2H.png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 19,221 total views; at campaign end (Jan 31st) the post had 7,476 views, exceeding the benchmark upper bound of 2,664 views.</p><p>The post performed well because the content showed that the institute is not only a place to study English but also a fun and engaging learning environment, and the carousel format highlighted each activity such as in-person games, talent shows, and school events, which captured viewers’ interest and encouraged higher engagement.</p>`
                 },
                 {
-                    image: 'assets/images/H3_Data (1).png',
+                    image: 'assets/images/3H.png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 6,770 total views; at campaign end period the post had 6,450 views, exceeding the benchmark upper bound of 3,207 views.</p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because it used the trending Chill Guy meme from TikTok, which was very popular among young people at that time, and this helped deliver a fun message that with Starfish classes you can be relaxed and confident about learning English, unlike others who are still struggling.</p>`
                 },
                 {
-                    image: 'assets/images/H4_Data.png',
+                    image: 'assets/images/4H.png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 6,020 total views; at campaign end period the post had 5,729 views, exceeding the benchmark upper bound of 3,207 views.</p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because it focused on a major pain point for university students in Myanmar, which is the lack of time to join English classes due to their full day of lectures, and this insight came from detailed research and surveys done before the campaign. The content delivered a clear message that Starfish offers flexible evening schedules, allowing students to study at a time that fits their routine and supports their future career growth.</p>`
                 },
                 {
-                    image: 'assets/images/H4_Data.png',
+                    image: 'assets/images/5H.png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 5,679 total views; at campaign end (Jan 31st) the post had 3,423 views, exceeding the benchmark upper bound of 2,045 views.</p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because the announcement of a free trial Zoom class gave potential customers a sense of credibility and assurance, helping move them from consideration to conversion by showing the real quality of the teaching experience. It also performed strongly because free trials lower the barrier for first-time learners, create curiosity, and encourage people to test the class without commitment, which naturally drives higher engagement and sign-ups.</p>`
                 },
             ]
@@ -53,13 +53,13 @@ const modalData = {
         highlighted: {
             slides: [
                 {
-                    image: 'assets/images/H4_Data (1).png',
+                    image: 'assets/images/H1 Big.png',
                     content: `<h3>Highlighted Post</h3><p>The post performed well because it was a giveaway announcement released during the Thadingyut festive period, when audiences are naturally more active and open to participating in lighthearted content.  With a well planned boost of 30 dollars for two weeks, the post reached a wide audience and encouraged strong engagement.
 </p>
 <p> Its lifetime performance on Meta shows how effective it was, achieving more than 450 thousand views, 964 interactions, 327 link clicks, and 116 new follows, proving that the festive timing, the giveaway incentive, and the paid reach together created strong results for the campaign.</p>`
                 },
                 {
-                    image: 'assets/images/H2_Data (2).png',
+                    image: 'assets/images/H2 Big.png',
                     content: `<h3>Highlighted Post</h3>
                     <p>Meta lifetime metrics show 809 total views; at campaign end period, the post had 741 views, exceeding the benchmark upper bound of 556 views.
 </p>
@@ -67,18 +67,18 @@ const modalData = {
 </p><p>The post performed well because it used cultural storytelling about Thadingyut in Myanmar, where young people pay respect to elders and receive pocket money, and this helped viewers connect with the content during the festive period. Many people felt a sense of recognition and nostalgia when they were reminded of their own experiences, which made the post more relatable and engaging.</p>`
                 },
                 {
-                    image: 'assets/images/H3_Data (2).png',
+                    image: 'assets/images/H3 Big.png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 1,159 total views; at campaign end period, the post had 1,090 views, exceeding the benchmark upper bound of 556 views.
 </p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because it used a creative and playful engagement approach with a visual design that carried a clear message. The hook tagline ‘How much is your phone battery now?’ combined with four different battery levels and matching product options encouraged viewers to check their own phones and compare their battery range with the products shown. This simple and interactive moment made the content fun, relatable, and highly shareable, which helped boost engagement</p>`
                 },
                 {
-                    image: 'assets/images/H1_Data (2).png',
+                    image: 'assets/images/H4 Big.png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 1,068 total views; at campaign end (Oct 31st) the post had 969 views, exceeding the benchmark upper bound of 453 views.
 </p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because its visual design was eye catching, clean, and easy to understand, and the bright brand colors made the content pop. The clear showcase of the three different flavored products added a fun and appealing look that attracted viewers’ attention and encouraged more engagement.
 </p>`
                 },
                 {
-                    image: 'assets/images/H5_Data (1).png',
+                    image: 'assets/images/H5 Big.png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 927 total views; at campaign end (Oct 31st) the post had 839 views, exceeding the benchmark upper bound of 522 views.
 </p><p>Achieved 100% organic reach and engagement with no ad spend.
 </p><p>The post performed well because its main goal was to highlight a specific product’s soft texture and unique features. The message was delivered effectively with a catchy tagline ‘Cannot escape from softness’ and a visual design that was both clean and creative, clearly showcasing the product’s cushion on the blocks of jellies inside the package, making the softness and the packaging immediately understandable and appealing to viewers.</p>`
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (prevBtn) prevBtn.style.display = 'none';
                     if (nextBtn) nextBtn.style.display = 'none';
                 } else {
-                    if (slideshowImages) slideshowImages.innerHTML = `<img src="${slides[currentSlide].image}" style="max-width:330px;height:200px;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px rgba(52,69,81,0.10);margin-bottom:1rem;display:block;cursor:zoom-in;" alt="Slideshow Image" class="slideshow-lightbox-img" />`;
+                    if (slideshowImages) slideshowImages.innerHTML = `<img src="${slides[currentSlide].image}" style="max-width:85%;margin:0 auto;height:100%;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px rgba(52,69,81,0.10);margin-bottom:1rem;display:block;cursor:zoom-in;" alt="Slideshow Image" class="slideshow-lightbox-img" />`;
                     if (slideshowRadios) slideshowRadios.innerHTML = slides.map((slide, idx) => `
                         <span class="slideshow-dot" style="display:inline-block;width:14px;height:14px;margin:0 6px;border-radius:50%;background:${idx === currentSlide ? 'var(--accent-color, #3451a1)' : '#e0e3ea'};box-shadow:0 1px 4px rgba(52,69,81,0.10);cursor:pointer;transition:background 0.2s;border:2px solid ${idx === currentSlide ? 'var(--accent-color, #3451a1)' : '#cfd3db'};" data-slide="${idx}"></span>
                     `).join('');
