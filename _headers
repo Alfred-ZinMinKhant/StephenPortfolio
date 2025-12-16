@@ -1,11 +1,20 @@
-/
-  X-Frame-Options: SAMEORIGIN
-  Content-Security-Policy: default-src 'self'; frame-src https://www.canva.com;
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
+/ # Security headers
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: default-src 'self'; frame-src https://www.canva.com;
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+
+/*.html
+Cache-Control: no-cache
 
 /styles.css
-  Cache-Control: public, max-age=31536000
+Cache-Control: public, max-age=31536000, immutable
 
 /script.js
-  Cache-Control: public, max-age=31536000
+Cache-Control: public, max-age=31536000, immutable
+
+/assets/*
+Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+Cache-Control: public, max-age=31536000, immutable

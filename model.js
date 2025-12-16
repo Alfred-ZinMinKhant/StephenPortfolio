@@ -129,7 +129,79 @@ const modalData = {
                 }
             ]
         }
+    },
+
+    starfish_academy: {
+        highlighted: {
+            slides: [
+                {
+                    image: 'assets/images/1H.png',
+                    content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 2,227 total views; at campaign end (Dec 31st) the post had 2,085 views, exceeding the benchmark upper bound of 751 views.
+
+</p> <p>Achieved 100% organic reach and engagement with no ad spend.
+</p>
+<p>This post performed well because it clearly speaks to the target audience parents by highlighting the importance of building strong foundational English skills at a young age. It reassures parents that the app is a reliable learning companion for their children, acting like a personal tutor and reducing the stress of finding additional tutors, while ensuring consistent and effective learning at home.</p>`
+                },
+                {
+                    image: 'assets/images/2H (2).png',
+                    content: `<h3>Highlighted Post</h3>
+                    <p>Meta lifetime metrics show 1,393 total views; at campaign end (Dec 31st) the post had 1,293 views, exceeding the benchmark upper bound of 929.
+</p>
+<p>Achieved 100% organic reach and engagement with no ad spend.
+</p><p>The post performed well because it directly addressed parents’ key pain point—their children’s struggles with English, a pivotal language for future global opportunities. The before and after visual created a strong emotional connection while enhancing the app’s credibility by clearly showing the student’s learning journey. The left side highlighted poor academic results, while the right side showed a happier student achieving better grades after using the app, supported by clear and easy to understand visual direction.</p>`
+                },
+                {
+                    image: 'assets/images/3H (2).png',
+                    content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 1,159 total views; at campaign end period, the post had 1,090 views, exceeding the benchmark upper bound of 556 views.
+</p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because it used a creative and playful engagement approach with a visual design that carried a clear message. The hook tagline ‘How much is your phone battery now?’ combined with four different battery levels and matching product options encouraged viewers to check their own phones and compare their battery range with the products shown. This simple and interactive moment made the content fun, relatable, and highly shareable, which helped boost engagement</p>`
+                },
+            ]
+        },
+        achievements: {
+            slides: [
+                {
+                    content: `<h3>Key Achievements</h3>
+                    <table style="width:100%;margin-top:1rem;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(52,69,81,0.10);">
+                    <thead style="background:var(--accent-color,#3451a1);color:#fff;"><tr>
+                    <th style="padding:8px 10px;text-align:left;">Metric</th>
+                    <th style="padding:8px 10px;text-align:left;">Campaign Posts</th>
+                    <th style="padding:8px 10px;text-align:left;">Previous Month</th>
+                    <th style="padding:8px 10px;text-align:left;">%Change</th>
+                    </tr></thead><tbody style="color:var(--text-slate);"><tr>
+                    <td style="padding:8px 10px;">Total Reach</td>
+                    <td style="padding:8px 10px;">6,878</td>
+                    <td style="padding:8px 10px;">4,493</td>
+                    <td style="padding:8px 10px;">+53% </td></tr>
+                    <tr><td style="padding:8px 10px;">Total Engagement</td>
+                    <td style="padding:8px 10px;">158</td>
+                    <td style="padding:8px 10px;">110</td>
+                    <td style="padding:8px 10px;">++44%</td>
+                    </tbody>
+                    </table>`
+                }
+            ]
+        },
+        metrics: {
+            slides: [
+                {
+                    image: 'assets/images/StarFish_academy_table.png',
+                    content: `<h3>Brand Impact</h3><p>These lifetime metrics from Meta show the posts I managed for the 'Achieve with Starfish Academy' campaign, which ran for 20 days from December 11 to December 31, 2024, with 8 posts. Other in-house posts made during this period are not included here.
+</p>`
+                },
+                {
+                    image: 'assets/images/StarFish_academy_table1.png',
+                    content: `<h3>Brand Impact</h3><p>These lifetime metrics from Meta show the posts I managed for the 'Achieve with Starfish Academy' campaign, which ran for 20 days from December 11 to December 31, 2024, with 8 posts. Other in-house posts made during this period are not included here.
+</p>`
+                },
+                {
+                    image: 'assets/images/StarFish_academy_table2.png',
+                    content: `<h3>Brand Impact</h3><p>These lifetime metrics from Meta show the posts I managed for the 'Achieve with Starfish Academy' campaign, which ran for 20 days from December 11 to December 31, 2024, with 8 posts. Other in-house posts made during this period are not included here.
+</p>`
+                }
+            ]
+        }
     }
+    
 };
 
 // Attach modal logic for starfish card only (as example)
