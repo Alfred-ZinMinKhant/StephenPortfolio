@@ -152,8 +152,9 @@ const modalData = {
                 },
                 {
                     image: 'assets/images/3H (2).png',
-                    content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 1,159 total views; at campaign end period, the post had 1,090 views, exceeding the benchmark upper bound of 556 views.
-</p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because it used a creative and playful engagement approach with a visual design that carried a clear message. The hook tagline ‘How much is your phone battery now?’ combined with four different battery levels and matching product options encouraged viewers to check their own phones and compare their battery range with the products shown. This simple and interactive moment made the content fun, relatable, and highly shareable, which helped boost engagement</p>`
+                    content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 2,691 total views; at campaign end (Dec 31st) the post had 2,520 views, exceeding the benchmark upper bound of 695 views.
+
+</p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because it leveraged a seasonal Christmas and New Year promotion to encourage app subscriptions, positioning the offer as a timely and valuable investment in children’s learning journeys.</p>`
                 },
             ]
         },
