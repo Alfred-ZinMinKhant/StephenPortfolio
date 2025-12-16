@@ -53,7 +53,7 @@ const modalData = {
         highlighted: {
             slides: [
                 {
-                    image: 'assets/images/H1 Big.png',
+                    image: 'assets/images/H4 Big.png',
                     content: `<h3>Highlighted Post</h3><p>The post performed well because it was a giveaway announcement released during the Thadingyut festive period, when audiences are naturally more active and open to participating in lighthearted content.  With a well planned boost of 30 dollars for two weeks, the post reached a wide audience and encouraged strong engagement.
 </p>
 <p> Its lifetime performance on Meta shows how effective it was, achieving more than 450 thousand views, 964 interactions, 327 link clicks, and 116 new follows, proving that the festive timing, the giveaway incentive, and the paid reach together created strong results for the campaign.</p>`
@@ -72,7 +72,7 @@ const modalData = {
 </p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because it used a creative and playful engagement approach with a visual design that carried a clear message. The hook tagline ‘How much is your phone battery now?’ combined with four different battery levels and matching product options encouraged viewers to check their own phones and compare their battery range with the products shown. This simple and interactive moment made the content fun, relatable, and highly shareable, which helped boost engagement</p>`
                 },
                 {
-                    image: 'assets/images/H4 Big.png',
+                    image: 'assets/images/H1 Big.png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 1,068 total views; at campaign end (Oct 31st) the post had 969 views, exceeding the benchmark upper bound of 453 views.
 </p><p>Achieved 100% organic reach and engagement with no ad spend.</p><p>The post performed well because its visual design was eye catching, clean, and easy to understand, and the bright brand colors made the content pop. The clear showcase of the three different flavored products added a fun and appealing look that attracted viewers’ attention and encouraged more engagement.
 </p>`
@@ -135,7 +135,7 @@ const modalData = {
         highlighted: {
             slides: [
                 {
-                    image: 'assets/images/1H.png',
+                    image: 'assets/images/2H (2).png',
                     content: `<h3>Highlighted Post</h3><p>Meta lifetime metrics show 2,227 total views; at campaign end (Dec 31st) the post had 2,085 views, exceeding the benchmark upper bound of 751 views.
 
 </p> <p>Achieved 100% organic reach and engagement with no ad spend.
@@ -143,7 +143,7 @@ const modalData = {
 <p>This post performed well because it clearly speaks to the target audience parents by highlighting the importance of building strong foundational English skills at a young age. It reassures parents that the app is a reliable learning companion for their children, acting like a personal tutor and reducing the stress of finding additional tutors, while ensuring consistent and effective learning at home.</p>`
                 },
                 {
-                    image: 'assets/images/2H (2).png',
+                    image: 'assets/images/1H.png',
                     content: `<h3>Highlighted Post</h3>
                     <p>Meta lifetime metrics show 1,393 total views; at campaign end (Dec 31st) the post had 1,293 views, exceeding the benchmark upper bound of 929.
 </p>
