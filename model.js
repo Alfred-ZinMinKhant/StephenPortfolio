@@ -227,10 +227,43 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (prevBtn) prevBtn.style.display = 'none';
                     if (nextBtn) nextBtn.style.display = 'none';
                 } else {
-                    if (slideshowImages) slideshowImages.innerHTML = `<img src="${slides[currentSlide].image}" style="max-width:85%;margin:0 auto;height:100%;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px rgba(52,69,81,0.10);margin-bottom:1rem;display:block;cursor:zoom-in;" alt="Slideshow Image" class="slideshow-lightbox-img" />`;
+                    // build dots
                     if (slideshowRadios) slideshowRadios.innerHTML = slides.map((slide, idx) => `
                         <span class="slideshow-dot" style="display:inline-block;width:14px;height:14px;margin:0 6px;border-radius:50%;background:${idx === currentSlide ? 'var(--accent-color, #3451a1)' : '#e0e3ea'};box-shadow:0 1px 4px rgba(52,69,81,0.10);cursor:pointer;transition:background 0.2s;border:2px solid ${idx === currentSlide ? 'var(--accent-color, #3451a1)' : '#cfd3db'};" data-slide="${idx}"></span>
                     `).join('');
+
+                    // reuse image element to avoid reflow; crossfade on load
+                    if (slideshowImages) {
+                        let img = slideshowImages.querySelector('img.slideshow-lightbox-img');
+                        const src = slides[currentSlide].image;
+                        if (!img) {
+                            img = document.createElement('img');
+                            img.className = 'slideshow-lightbox-img';
+                            img.alt = 'Slideshow Image';
+                            img.style.maxWidth = '90%';
+                            img.style.margin = '0 auto';
+                            img.style.borderRadius = '12px';
+                            img.style.boxShadow = '0 2px 12px rgba(52,69,81,0.10)';
+                            img.style.marginBottom = '1rem';
+                            img.style.display = 'block';
+                            img.style.cursor = 'zoom-in';
+                            img.style.opacity = '0';
+                            img.style.transition = 'opacity 220ms ease';
+                            img.addEventListener('click', function () {
+                                if (!document.getElementById('lightbox-overlay')) return;
+                                const overlay = document.getElementById('lightbox-overlay');
+                                const lightboxImg = document.getElementById('lightbox-img');
+                                lightboxImg.src = src;
+                                overlay.style.display = 'flex';
+                            });
+                            slideshowImages.appendChild(img);
+                        } else {
+                            img.style.opacity = '0';
+                        }
+                        img.onload = function () { img.style.opacity = '1'; };
+                        img.src = src;
+                    }
+
                     if (description) description.innerHTML = slides[currentSlide].content;
                     if (prevBtn) prevBtn.style.display = '';
                     if (nextBtn) nextBtn.style.display = '';

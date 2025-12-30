@@ -536,31 +536,9 @@ function setupModalHandlers(campaign) {
         if (!data || !data.images) return;
         const imagesDiv = modal.querySelector(`#slideshow-images-${campaign}`);
         const radiosDiv = modal.querySelector(`#slideshow-radios-${campaign}`);
-        imagesDiv.innerHTML = '';
+        // build radios
         radiosDiv.innerHTML = '';
         if (data.images && data.images.length) {
-            const img = document.createElement('img');
-            img.src = data.images[idx];
-            img.alt = `${campaign} slide ${idx + 1}`;
-            img.className = 'modal-slide-img';
-            img.style.cursor = 'zoom-in';
-            // Lightbox effect
-            img.addEventListener('click', () => {
-                const overlay = document.createElement('div');
-                overlay.className = 'lightbox-overlay';
-                overlay.innerHTML = `<img src='${data.images[idx]}' class='lightbox-img' style='max-width:90vw;max-height:90vh;display:block;margin:auto;'/>`;
-                overlay.style.position = 'fixed';
-                overlay.style.top = 0;
-                overlay.style.left = 0;
-                overlay.style.width = '100vw';
-                overlay.style.height = '100vh';
-                overlay.style.background = 'rgba(0,0,0,0.85)';
-                overlay.style.zIndex = 99999;
-                overlay.addEventListener('click', () => overlay.remove());
-                document.body.appendChild(overlay);
-            });
-            imagesDiv.appendChild(img);
-            // Radios
             for (let i = 0; i < data.images.length; i++) {
                 const radio = document.createElement('input');
                 radio.type = 'radio';
@@ -573,6 +551,41 @@ function setupModalHandlers(campaign) {
                 });
                 radiosDiv.appendChild(radio);
             }
+
+            // reuse existing img element to avoid layout reflow; crossfade on load
+            let img = imagesDiv.querySelector('img.modal-slide-img');
+            const imgSrc = data.images[idx];
+            if (!img) {
+                img = document.createElement('img');
+                img.alt = `${campaign} slide ${idx + 1}`;
+                img.className = 'modal-slide-img';
+                img.style.cursor = 'zoom-in';
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 220ms ease';
+                // Lightbox effect
+                img.addEventListener('click', () => {
+                    const overlay = document.createElement('div');
+                    overlay.className = 'lightbox-overlay';
+                    overlay.innerHTML = `<img src='${imgSrc}' class='lightbox-img' style='max-width:90vw;max-height:90vh;display:block;margin:auto;'/>`;
+                    overlay.style.position = 'fixed';
+                    overlay.style.top = 0;
+                    overlay.style.left = 0;
+                    overlay.style.width = '100vw';
+                    overlay.style.height = '100vh';
+                    overlay.style.background = 'rgba(0,0,0,0.85)';
+                    overlay.style.zIndex = 99999;
+                    overlay.addEventListener('click', () => overlay.remove());
+                    document.body.appendChild(overlay);
+                });
+                imagesDiv.appendChild(img);
+            } else {
+                img.style.opacity = '0';
+            }
+
+            img.onload = () => {
+                img.style.opacity = '1';
+            };
+            img.src = imgSrc;
         }
     }
 
