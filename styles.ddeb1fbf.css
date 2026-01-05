@@ -478,7 +478,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Portfolio Section */
 .portfolio {
-    padding: 100px 20px;
+    padding: 100px 20px 30px;
     background: var(--bg-color);
 }
 

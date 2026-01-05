@@ -635,4 +635,9 @@ function setupModalHandlers(campaign) {
     }
 }
 
-Object.keys(campaignModalData).forEach(setupModalHandlers);
+if (typeof campaignModalData !== 'undefined' && campaignModalData && Object.keys(campaignModalData).length) {
+    Object.keys(campaignModalData).forEach(setupModalHandlers);
+} else {
+    // campaignModalData not available — skip modal setup to avoid runtime errors
+    console.warn('campaignModalData is not defined; portfolio modals will not be initialized.');
+}

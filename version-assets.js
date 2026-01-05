@@ -16,6 +16,18 @@ const assets = [
     tag: /<script[^>]+src=["'](script(?:\.[a-f0-9]{8})?\.js)["'][^>]*><\/script>/,
     pattern: /^script\.[a-f0-9]{8}\.js$/,
     replaceRe: /script(\.[a-f0-9]{8})?\.js/g
+  },
+  {
+    file: 'assets/gallery.css',
+    tag: /<link[^>]+href=["'](assets\/gallery(?:\.[a-f0-9]{8})?\.css)["'][^>]*>/,
+    pattern: /^gallery\.[a-f0-9]{8}\.css$/,
+    replaceRe: /assets\/gallery(\.[a-f0-9]{8})?\.css/g
+  },
+  {
+    file: 'assets/gallery.js',
+    tag: /<script[^>]+src=["'](assets\/gallery(?:\.[a-f0-9]{8})?\.js)["'][^>]*><\/script>/,
+    pattern: /^gallery\.[a-f0-9]{8}\.js$/,
+    replaceRe: /assets\/gallery(\.[a-f0-9]{8})?\.js/g
   }
 ];
 
@@ -32,10 +44,12 @@ function versionAsset(asset) {
   const hash = getHash(oldPath);
   const ext = path.extname(asset.file);
   const base = path.basename(asset.file, ext);
-  const newFile = `${base}.${hash}${ext}`;
-  const newPath = path.join(__dirname, newFile);
+  const dir = path.dirname(asset.file);
+  const newFileName = `${base}.${hash}${ext}`;
+  const newPath = dir && dir !== '.' ? path.join(__dirname, dir, newFileName) : path.join(__dirname, newFileName);
   fs.copyFileSync(oldPath, newPath);
-  return { old: asset.file, hashed: newFile, tag: asset.tag };
+  const hashedRelative = dir && dir !== '.' ? `${dir.replace(/\\/g, '/')}/${newFileName}` : newFileName;
+  return { old: asset.file, hashed: hashedRelative, tag: asset.tag };
 }
 
 function updateHtml(htmlPath, replacements) {
@@ -47,11 +61,13 @@ function updateHtml(htmlPath, replacements) {
 }
 
 function cleanupOldAssets(asset) {
-  const dir = __dirname;
-  const files = fs.readdirSync(dir);
+  const assetDir = path.dirname(asset.file) || '.';
+  const dirPath = assetDir === '.' ? __dirname : path.join(__dirname, assetDir);
+  if (!fs.existsSync(dirPath)) return;
+  const files = fs.readdirSync(dirPath);
   files.forEach(file => {
     if (asset.pattern && asset.pattern.test(file)) {
-      fs.unlinkSync(path.join(dir, file));
+      fs.unlinkSync(path.join(dirPath, file));
     }
   });
 }
