@@ -61,6 +61,11 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-white);
 }
 
+.achievement .section-title, .achievement .section-subtitle{
+    color: var(--text-slate);
+}
+
+
 .section-subtitle {
     font-size: 1.1rem;
     color: var(--text-white);
