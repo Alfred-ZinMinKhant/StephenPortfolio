@@ -11,16 +11,16 @@ document.addEventListener('DOMContentLoaded', function(){
     return {
       src: encodeURI('assets/images/gallery/' + fname),
       caption: [
-        'Starfish — Brand Awareness',
-        'Dream Jelly — Festive Engagement',
-        'Starfish Academy — Kids Program',
-        'Campaign — Visual Highlights'
+        'What is the strategy behind this copy?',
+        'What is the strategy behind this copy?',
+        'What is the strategy behind this copy?',
+        'What is the strategy behind this copy?',
       ][idx] || '' ,
       description: [
-        'Targeted awareness campaign across Facebook focusing on working professionals.',
-        'Seasonal posts and a giveaway activation to boost engagement and page growth.',
-        'Creative static posts aimed at parents to highlight learning benefits for children.',
-        'A curated selection of visual assets showcasing campaign creative direction.'
+        'To attract customers who prefer a calm, cozy environment by emphasizing atmosphere, emotional relief, and sensory experience.',
+        'To introduce the new menu drink to matcha lovers by highlighting its ingredients and flavour experience, showing how each element contributes to an authentic and satisfying taste.',
+        'To attract new customers during the soft opening with a limited-time promotion and a unique slow bar experience, letting guests watch award-winning baristas and enjoy a memorable, immersive coffee visit.',
+        'To educate coffee lovers about the Slow Bar concept, highlighting the café’s slow bar immersive experience where guests can watch and learn from professional baristas while engaging and asking questions.'
       ][idx] || ''
     };
   });
