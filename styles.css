@@ -688,10 +688,12 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    /* Center the last card if odd number of cards */
+    /* When third card is alone on its row, keep it the same width and centered */
     .portfolio-grid > .portfolio-item:nth-child(3):last-child {
         grid-column: 1 / -1;
         justify-self: center;
+        width: 100%;
+        max-width: calc((100% - 2rem) / 2);
     }
 
 .service-card {
@@ -1162,8 +1164,173 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(135deg, #A9A9A9 0%, #708090 100%);
 }
 
-/* Modal / Slideshow responsive fixes (iPhone & small screens) */
+/* ============================================================
+   Campaign Slideshow Modal — refined design
+   ============================================================ */
+.portfolio-modal {
+    margin-top: 1.6rem;
+    background: linear-gradient(180deg, #fafaf7 0%, #f3f2ec 100%);
+    border: 1px solid rgba(43, 45, 66, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    animation: modalFadeIn 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .portfolio-modal .modal-content {
+    padding: 1.6rem 1.4rem 1.4rem;
+    position: relative;
+}
+
+.portfolio-modal .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(43, 45, 66, 0.08);
+    border: none;
+    color: var(--text-slate);
+    font-size: 0.78rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease, transform 0.25s ease;
+    z-index: 4;
+}
+
+.portfolio-modal .modal-close:hover {
+    background: rgba(43, 45, 66, 0.18);
+    transform: rotate(90deg);
+}
+
+.portfolio-modal .modal-slideshow {
+    position: relative;
+}
+
+.portfolio-modal .modal-stage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+}
+
+/* When achievements view clears the slideshow, collapse the empty stage */
+.portfolio-modal .modal-stage:has(> .slideshow-images:empty) {
+    display: none;
+}
+
+.portfolio-modal .modal-slideshow:has(.slideshow-images:empty) .slideshow-radios {
+    display: none;
+}
+
+.portfolio-modal .slideshow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(43, 45, 66, 0.12);
+    color: var(--text-slate);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+    z-index: 3;
+}
+
+.portfolio-modal .slideshow-btn:hover {
+    background: var(--text-slate);
+    color: var(--text-white);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.25);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.portfolio-modal .prev-slide { left: 4px; }
+.portfolio-modal .next-slide { right: 4px; }
+
+.portfolio-modal .slideshow-radios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.2rem 0;
+}
+
+.portfolio-modal .slideshow-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(43, 45, 66, 0.22);
+    cursor: pointer;
+    transition: background 0.3s ease, width 0.3s ease, transform 0.25s ease;
+    border: none;
+}
+
+.portfolio-modal .slideshow-dot:hover {
+    background: rgba(43, 45, 66, 0.4);
+    transform: scale(1.15);
+}
+
+.portfolio-modal .slideshow-dot.active {
+    width: 26px;
+    background: var(--text-slate);
+}
+
+.portfolio-modal .modal-description {
+    margin-top: 1.3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(43, 45, 66, 0.08);
+    color: var(--text-slate);
+    font-size: 0.93rem;
+    line-height: 1.65;
+}
+
+.portfolio-modal .modal-description h3 {
+    margin: 0 0 0.6rem 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+
+.portfolio-modal .modal-description p {
+    margin: 0 0 0.7rem 0;
+}
+
+.portfolio-modal .modal-description p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .portfolio-modal .modal-content {
+        padding: 1.2rem 1rem 1.1rem;
+    }
+    .portfolio-modal .slideshow-btn {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+/* Modal / Slideshow responsive fixes (iPhone & small screens) */
+.portfolio-modal .modal-content--legacy-padding {
     padding: 1rem;
 }
 
@@ -1190,13 +1357,29 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 12px;
 }
 
-/* Prevent layout jump when swapping slides: keep container stable and crossfade images */
+/* Stable slideshow stage — fixed aspect ratio so different images don't shift the layout */
 .portfolio-modal .slideshow-images {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 180px; /* keeps buttons vertically centered */
+    width: 100%;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
+    min-height: 0;
+}
+
+.portfolio-modal .slideshow-images:empty {
+    display: none;
+    aspect-ratio: auto;
+}
+
+.portfolio-modal .slideshow-images img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    margin: 0 !important;
 }
 
 .portfolio-modal .slideshow-images img,
@@ -1225,6 +1408,322 @@ h1, h2, h3, h4, h5, h6 {
 .lightbox-overlay img {
     max-width: 95vw !important;
     max-height: 95vh !important;
+}
+
+/* ============================================================
+   Portfolio / Social Media Campaigns — magazine layout
+   ============================================================ */
+.portfolio {
+    padding: 110px 20px 70px;
+    background: linear-gradient(180deg, #f7f6f1 0%, #ffffff 55%);
+    position: relative;
+}
+
+.portfolio .section-header {
+    margin-bottom: 3.5rem;
+}
+
+.portfolio .section-title,
+.portfolio .section-subtitle {
+    color: var(--text-slate);
+}
+
+.portfolio .section-subtitle {
+    color: rgba(43, 45, 66, 0.65);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.campaign-card.portfolio-item {
+    background: #ffffff;
+    border: 1px solid rgba(43, 45, 66, 0.08);
+    border-radius: 24px;
+    box-shadow:
+        0 28px 56px -32px rgba(15, 23, 42, 0.28),
+        0 10px 20px -10px rgba(15, 23, 42, 0.1);
+    overflow: visible;
+    min-height: auto;
+    max-width: none;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+}
+
+.campaign-card.portfolio-item:hover {
+    transform: translateY(-6px) scale(1);
+    box-shadow:
+        0 40px 80px -32px rgba(15, 23, 42, 0.35),
+        0 14px 26px -10px rgba(15, 23, 42, 0.14);
+    border-color: rgba(43, 45, 66, 0.14);
+}
+
+.campaign-card .portfolio-content {
+    padding: 2.5rem 2.25rem 2rem;
+}
+
+.campaign-header {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid rgba(43, 45, 66, 0.08);
+}
+
+.campaign-logo {
+    flex-shrink: 0;
+    width: 112px;
+    height: 112px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #fafaf7 0%, #f2f1ec 100%);
+    border: 1px solid rgba(43, 45, 66, 0.07);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8),
+                0 6px 16px rgba(15, 23, 42, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+}
+
+.campaign-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.campaign-heading {
+    flex: 1;
+    min-width: 0;
+}
+
+.campaign-eyebrow {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 0.55rem;
+}
+
+.campaign-title {
+    margin: 0 0 0.4rem 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-slate);
+    line-height: 1.28;
+    letter-spacing: -0.005em;
+}
+
+.campaign-client {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(43, 45, 66, 0.62);
+    font-weight: 500;
+}
+
+.campaign-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: linear-gradient(135deg, #f7f6f1 0%, #ececdf 100%);
+    border-radius: 16px;
+    padding: 1.1rem 0.5rem;
+    margin-bottom: 1.7rem;
+    border: 1px solid rgba(43, 45, 66, 0.06);
+}
+
+.campaign-stat {
+    text-align: center;
+    padding: 0.3rem 0.5rem;
+    position: relative;
+}
+
+.campaign-stat:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 16%;
+    bottom: 16%;
+    width: 1px;
+    background: rgba(43, 45, 66, 0.12);
+}
+
+.campaign-stat-value {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-slate);
+    line-height: 1.2;
+    margin-bottom: 0.15rem;
+}
+
+.campaign-stat-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(43, 45, 66, 0.55);
+}
+
+.campaign-section {
+    margin-bottom: 1.5rem;
+}
+
+.campaign-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.campaign-section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin: 0 0 0.7rem 0;
+}
+
+.campaign-section-body {
+    margin: 0;
+    color: var(--text-slate);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.campaign-role-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.campaign-role-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: var(--text-slate);
+    font-size: 0.93rem;
+    line-height: 1.55;
+}
+
+.campaign-role-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(112, 128, 144, 0.16);
+}
+
+.campaign-footer {
+    margin-top: 1.8rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid rgba(43, 45, 66, 0.08);
+    text-align: center;
+}
+
+.campaign-cta-label {
+    margin: 0 0 0.9rem 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(43, 45, 66, 0.5);
+}
+
+.campaign-card .portfolio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.campaign-card .tag.tag-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.25rem;
+    background: #ffffff;
+    color: var(--text-slate);
+    border: 1px solid rgba(43, 45, 66, 0.16);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease,
+                transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+    letter-spacing: 0.01em;
+    font-family: inherit;
+}
+
+.campaign-card .tag.tag-btn i {
+    font-size: 0.82rem;
+    color: rgba(43, 45, 66, 0.55);
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.campaign-card .tag.tag-btn:hover {
+    background: #ffffff;
+    border-color: var(--text-slate);
+    color: var(--text-slate);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+}
+
+.campaign-card .tag.tag-btn:hover i {
+    color: var(--text-slate);
+    transform: scale(1.1);
+}
+
+.campaign-card .tag.tag-btn.active {
+    background: var(--text-slate);
+    color: var(--text-white);
+    border-color: var(--text-slate);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.3);
+    transform: translateY(-1px);
+}
+
+.campaign-card .tag.tag-btn.active i {
+    color: var(--text-white);
+}
+
+@media (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .campaign-card .portfolio-content {
+        padding: 2rem 1.5rem 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .campaign-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .campaign-logo {
+        width: 64px;
+        height: 64px;
+    }
+    .campaign-title {
+        font-size: 1.15rem;
+    }
 }
 
 /* ============================================================

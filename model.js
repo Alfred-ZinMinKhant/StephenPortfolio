@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     // build dots
                     if (slideshowRadios) slideshowRadios.innerHTML = slides.map((slide, idx) => `
-                        <span class="slideshow-dot" style="display:inline-block;width:14px;height:14px;margin:0 6px;border-radius:50%;background:${idx === currentSlide ? 'var(--accent-color, #3451a1)' : '#e0e3ea'};box-shadow:0 1px 4px rgba(52,69,81,0.10);cursor:pointer;transition:background 0.2s;border:2px solid ${idx === currentSlide ? 'var(--accent-color, #3451a1)' : '#cfd3db'};" data-slide="${idx}"></span>
+                        <span class="slideshow-dot${idx === currentSlide ? ' active' : ''}" data-slide="${idx}"></span>
                     `).join('');
 
                     // reuse image element to avoid reflow; crossfade on load
@@ -286,18 +286,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (prevBtn) {
                 prevBtn.onclick = function () {
-                    if (currentSlide > 0) {
-                        currentSlide--;
-                        renderSlideshow(modalData[cardKey][currentKey].slides);
-                    }
+                    const slides = modalData[cardKey][currentKey].slides;
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    renderSlideshow(slides);
                 };
             }
             if (nextBtn) {
                 nextBtn.onclick = function () {
-                    if (currentSlide < modalData[cardKey][currentKey].slides.length - 1) {
-                        currentSlide++;
-                        renderSlideshow(modalData[cardKey][currentKey].slides);
-                    }
+                    const slides = modalData[cardKey][currentKey].slides;
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    renderSlideshow(slides);
                 };
             }
             if (slideshowRadios) {
