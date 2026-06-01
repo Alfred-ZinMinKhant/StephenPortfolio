@@ -641,3 +641,75 @@ if (typeof campaignModalData !== 'undefined' && campaignModalData && Object.keys
     // campaignModalData not available — skip modal setup to avoid runtime errors
     console.warn('campaignModalData is not defined; portfolio modals will not be initialized.');
 }
+
+// ============================================================
+// Account Management Lightbox
+// ============================================================
+(function () {
+    const grid = document.getElementById('accountGrid');
+    const lightbox = document.getElementById('accountLightbox');
+    if (!grid || !lightbox) return;
+
+    const cards = Array.from(grid.querySelectorAll('.account-card'));
+    const imgEl = document.getElementById('accountLightboxImg');
+    const counterEl = document.getElementById('accountLightboxCounter');
+    const closeBtn = document.getElementById('accountLightboxClose');
+    const prevBtn = document.getElementById('accountLightboxPrev');
+    const nextBtn = document.getElementById('accountLightboxNext');
+
+    const sources = cards.map((card) => {
+        const img = card.querySelector('img');
+        return {
+            src: img ? img.getAttribute('src') : '',
+            alt: img ? img.getAttribute('alt') : ''
+        };
+    });
+
+    let activeIndex = 0;
+
+    function render(index) {
+        const item = sources[index];
+        if (!item) return;
+        imgEl.src = item.src;
+        imgEl.alt = item.alt;
+        counterEl.textContent = `${index + 1} / ${sources.length}`;
+        activeIndex = index;
+    }
+
+    function open(index) {
+        render(index);
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+    }
+
+    function close() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lightbox-open');
+    }
+
+    function step(delta) {
+        const next = (activeIndex + delta + sources.length) % sources.length;
+        render(next);
+    }
+
+    cards.forEach((card, idx) => {
+        card.addEventListener('click', () => open(idx));
+    });
+
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', () => step(-1));
+    nextBtn.addEventListener('click', () => step(1));
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('is-open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') step(-1);
+        else if (e.key === 'ArrowRight') step(1);
+    });
+})();
